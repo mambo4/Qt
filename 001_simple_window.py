@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 import sys
-from qtpy.QtWidgets import QApplication, QWidget
+from Qt.QtWidgets import QApplication, QWidget
 
 if __name__ == '__main__':
     
@@ -13,4 +13,3 @@ if __name__ == '__main__':
     w.show()
     
     sys.exit(app.exec_())
-
