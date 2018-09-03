@@ -1,8 +1,8 @@
 import sys
 # from PyQt.QtWidgets import QApplication, QWidget
-from PyQt5.QtWidgets import QApplication, QWidget
+from PyQt5.QtWidgets import QApplication, QWidget, QTabWidget
 
-class Widget(QWidget):
+class Widget(QTabWidget):
 
     def __init__(self):
         super(Widget,self).__init__()
