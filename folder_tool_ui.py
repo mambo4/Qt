@@ -2,6 +2,13 @@ import sys
 # from PyQt.QtWidgets import QApplication, QWidget
 import Qt.QtWidgets as QtWidgets
 import Qt
+
+ASSET_TYPES_DICT={
+    "characters":["humans","monsters"],
+    "objects":["doors","props","interacts"],
+    "player":["human","monster"]
+}
+
 class Widget(QtWidgets.QWidget):
 
     def __init__(self):
@@ -11,7 +18,7 @@ class Widget(QtWidgets.QWidget):
         self.left=300
         self.width=640
         self.height=480
-        self.asset_types=["characters","monsters","objects","player"]
+
         self.set_widgets()
         self.set_layout()
         self.set_window()
@@ -22,7 +29,7 @@ class Widget(QtWidgets.QWidget):
         self.assetname_editText=QtWidgets.QLineEdit()
         self.assettype_lable=QtWidgets.QLabel("Asset Type")
         self.assettype_combobox=QtWidgets.QComboBox()
-        self.assettype_combobox.addItems(self.asset_types)
+        self.assettype_combobox.addItems(ASSET_TYPES_DICT.keys())
 
     def set_layout(self):
         self.layout =QtWidgets.QHBoxLayout()
