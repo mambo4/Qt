@@ -46,11 +46,11 @@ class Tool(QtCore.QObject):
 
     def on_start_clicked(self):
         print "start!"
-        self.slow_process()
+        # self.slow_process()
 
     def on_stop_clicked(self):
         print "stop!"
-        self.slow_process()
+        # self.slow_process()
 
     def show(self):
         self.ui.start_clicked_signal.connect(self.on_start_clicked)
@@ -83,7 +83,7 @@ class UI(QtWidgets.QWidget):
         self.start_clicked_signal.emit('on_start_clicked')
 
     def on_stop_clicked(self):
-        self.start_clicked_signal.emit('on_stop_clicked')
+        self.stop_clicked_signal.emit('on_stop_clicked')
 
     def show_self(self):
         global UI
@@ -99,13 +99,7 @@ class UI(QtWidgets.QWidget):
 
 if __name__ == '__main__':
     import sys
-    # declare Qapp
-    try:
-        app = QtWidgets.QApplication([])
-    except RuntimeError:
-        app = util.app_dummy()
+    app = QtWidgets.QApplication([])
     tool=Tool()
     tool.show()
     sys.exit(app.exec_())
-
-
